@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slides-Guia — Oficina SNCT 2026 IFSC Garopaba</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- TELA 1 -->
+    <section class="slide ativo">
+      <span class="selo-bloco">TELA 1 DE 8 · ACOLHIDA</span>
+      <h1 class="display-4 fw-bold mt-4 slide-resumo">
+        Esta página apresenta a acolhida e o objetivo da oficina.
+      </h1>
+    </section>
+    <!-- TELA 2 -->
+    <section class="slide">
+      <span class="selo-bloco">TELA 2 DE 8 · MOODLE</span>
+      <h2 class="display-5 fw-bold mt-4 slide-resumo">
+        Esta página apresenta o acesso à sala da oficina no Moodle.
+      </h2>
+    </section>
+    <!-- TELA 3 -->
+    <section class="slide">
+      <span class="selo-bloco">TELA 3 DE 8 · PERSONALIZAÇÃO</span>
+      <h2 class="display-5 fw-bold mt-4 slide-resumo">
+        Esta página apresenta a personalização visual do site.
+      </h2>
+    </section>
+    <!-- TELA 4 -->
+    <section class="slide">
+      <span class="selo-bloco">TELA 4 DE 8 · ARQUIVOS</span>
+      <h2 class="display-5 fw-bold mt-4 slide-resumo">
+        Esta página apresenta os arquivos iniciais do projeto.
+      </h2>
+    </section>
+    <!-- TELA 5 -->
+    <section class="slide">
+      <span class="selo-bloco">TELA 5 DE 8 · ESTRUTURA</span>
+      <h2 class="display-5 fw-bold mt-4 slide-resumo">
+        Esta página apresenta a estrutura das páginas do site.
+      </h2>
+    </section>
+    <!-- TELA 6 -->
+    <section class="slide">
+      <span class="selo-bloco">TELA 6 DE 8 · CONTEÚDO</span>
+      <h2 class="display-5 fw-bold mt-4 slide-resumo">
+        Esta página apresenta o conteúdo que será exibido no site.
+      </h2>
+    </section>
+    <!-- TELA 7 -->
+    <section class="slide">
+      <span class="selo-bloco">TELA 7 DE 8 · PUBLICAÇÃO</span>
+      <h2 class="display-5 fw-bold mt-4 slide-resumo">
+        Esta página apresenta a publicação do site na internet.
+      </h2>
+    </section>
+    <!-- TELA 8 -->
+    <section class="slide">
+      <span class="selo-bloco">TELA 8 DE 8 · ACESSO</span>
+      <h2 class="display-5 fw-bold mt-4 slide-resumo">
+        Esta página apresenta o acesso ao site publicado pelo celular.
+      </h2>
+    </section>
+    <footer class="barra-rodape">
+      <span id="indicadorTela" class="fw-bold">Tela 1 / 8</span>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-light btn-lg" onclick="mudarSlide(-1)">
+          Anterior
+        </button>
+        <button class="btn btn-success btn-lg" onclick="mudarSlide(1)">
+          Proxima Tela
+        </button>
+      </div>
+    </footer>
+    <script>
+      let indiceAtual = 0;
+      const slides = document.querySelectorAll(".slide");
+      const indicador = document.getElementById("indicadorTela");
+      function mudarSlide(delta) {
+        slides[indiceAtual].classList.remove("ativo");
+        indiceAtual = Math.max(
+          0,
+          Math.min(slides.length - 1, indiceAtual + delta),
+        );
+        slides[indiceAtual].classList.add("ativo");
+        indicador.textContent = `Tela ${indiceAtual + 1} / ${slides.length}`;
+      }
+      document.addEventListener("keydown", (ev) => {
+        if (ev.key === "ArrowRight") mudarSlide(1);
+        if (ev.key === "ArrowLeft") mudarSlide(-1);
+      });
+    </script>
+  </body>
+</html>
