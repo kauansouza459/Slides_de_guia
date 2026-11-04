@@ -5,290 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Slides-Guia · Painel Verde Garopaba · SNCT 2026</title>
 <meta name="description" content="Slides-Guia de 8 telas da oficina Painel Verde Garopaba (Curso 2) · SNCT 2026 · IFSC Câmpus Garopaba" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E" />
+<link rel="icon" type="image/svg+xml" href="img/logo-painel-verde.svg" />
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-<!-- Estilos Personalizados -->
-<link rel="stylesheet" href="style.css" />
+<!-- Estilos personalizados -->
+<link rel="stylesheet" href="css/estilo.css" />
 </head>
 <body>
 <a class="pular" href="#palco">Ir para o conteúdo</a>
 <div id="progresso" role="presentation"></div>
 
-<main id="palco">
-
-<!-- ============ TELA 1 · ACOLHIDA (00–10 min) ============ -->
-<section class="slide ativo" data-bloco="0" data-min="10" data-titulo="Acolhida" aria-label="Tela 1 de 8: Acolhida">
-  <div class="faixa">
-    <span class="selo-bloco">TELA 1 DE 8 · ACOLHIDA</span>
-    <span class="chip">00–10 min</span>
-    <span class="chip suave">Micro-Roteiro · Página 1</span>
-  </div>
-  <div class="row align-items-center g-5">
-    <div class="col-lg-7">
-      <h1 class="display-3 fw-bold slide-resumo">Painel Verde de Garopaba <span class="destaque">no ar em 120 minutos</span></h1>
-      <p class="lead-telao">Coleta seletiva &amp; ecopontos · SNCT 2026 · IFSC Câmpus Garopaba</p>
-      <div class="cartao meta passo">
-        <span class="rotulo">🎯 Meta de hoje</span>
-        Você sai deste laboratório com o <strong>seu Painel Verde publicado na internet</strong> e abrindo no celular por QR Code.
-      </div>
-      <ul class="fichas passo">
-        <li><strong>4</strong> blocos práticos</li>
-        <li><strong>0</strong> instalações</li>
-        <li><strong>1</strong> site seu, no ar</li>
-      </ul>
-    </div>
-    <div class="col-lg-5 text-center">
-      <div class="moldura-qr passo">
-        <div class="qr-caixa" id="qr-demo"></div>
-        <p class="legenda">📱 Aponte a câmera: este é o painel <strong>pronto</strong></p>
-        <p class="link-curto" id="qr-demo-link"></p>
-      </div>
-      <img class="gif-ifsc gif-canto" alt="" aria-hidden="true" loading="lazy"
-           src="https://media.giphy.com/media/yUkYFAVdo8BNcmmhX6/giphy.gif" onerror="this.remove()" />
-    </div>
-  </div>
-</section>
-
-<!-- ============ TELA 2 · MOODLE (10–15 min) ============ -->
-<section class="slide" data-bloco="0" data-min="5" data-titulo="Sala no Moodle" aria-label="Tela 2 de 8: Sala no Moodle">
-  <div class="faixa">
-    <span class="selo-bloco">TELA 2 DE 8 · SALA NO MOODLE</span>
-    <span class="chip">10–15 min</span>
-    <span class="chip suave">Micro-Roteiro · Página 1</span>
-  </div>
-  <h2 class="display-5 fw-bold slide-resumo">Entre na <span class="destaque">sala do Curso 2</span> no Moodle IFSC</h2>
-  <div class="row g-5 align-items-center mt-1">
-    <div class="col-lg-7">
-      <ol class="passos">
-        <li class="passo">Acesse <strong>moodle.ifsc.edu.br</strong> e abra <strong>SNCT 2026 — Oficina: Painel Verde Garopaba</strong></li>
-        <li class="passo">Chave de inscrição: <button class="copiar-chip" data-copia="SNCT2026" title="Copiar chave">SNCT2026 <span aria-hidden="true">⧉</span></button></li>
-        <li class="passo">Na seção <strong>Geral</strong>: abra o <strong>Micro-Roteiro (PDF)</strong></li>
-        <li class="passo">Em <strong>Bloco 1</strong>: baixe o <code class="arq">starter-kit-painel-verde.zip</code></li>
-      </ol>
-    </div>
-    <div class="col-lg-5">
-      <div class="mapa-sala passo" aria-label="Mapa da sala no Moodle">
-        <span class="rotulo">🗺️ Mapa da sala</span>
-        <ul>
-          <li class="b0">Geral · Micro-Roteiro + Slides</li>
-          <li class="b1">Bloco 1 · Kit Inicial</li>
-          <li class="b2">Bloco 2 · Código Central</li>
-          <li class="b3">Bloco 3 · GitHub Pages</li>
-          <li class="b4">Bloco 4 · QR Code e Pesquisa</li>
-        </ul>
-      </div>
-      <div class="text-center mt-4 passo">
-        <div class="qr-caixa pequeno" id="qr-moodle"></div>
-        <p class="legenda">📱 QR da sala no Moodle</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TELA 3 · BLOCO 1 (15–35 min) ============ -->
-<section class="slide" data-bloco="1" data-min="20" data-titulo="Bloco 1 · Título e cores" aria-label="Tela 3 de 8: Bloco 1, título e cores">
-  <div class="faixa">
-    <span class="selo-bloco">TELA 3 DE 8 · BLOCO 1</span>
-    <span class="chip">15–35 min</span>
-    <span class="chip suave">Micro-Roteiro · Página 1</span>
-  </div>
-  <h2 class="display-6 fw-bold slide-resumo">Baixe o kit e personalize <span class="destaque">título e cores</span></h2>
-  <div class="row g-4 mt-0">
-    <div class="col-lg-5">
-      <ol class="passos compacto">
-        <li class="passo">Extraia <code class="arq">starter-kit-painel-verde.zip</code></li>
-        <li class="passo">Dê duplo clique em <code class="arq">index.html</code></li>
-        <li class="passo">Edite o título no <code class="arq">index.html</code></li>
-        <li class="passo">Troque a cor no <code class="arq">css/estilo.css</code></li>
-      </ol>
-      <pre class="arvore passo" aria-label="Estrutura de pastas">starter-kit-painel-verde/
-├─ index.html
-├─ css/estilo.css
-├─ js/app.js
-└─ README.md</pre>
-    </div>
-    <div class="col-lg-7">
-      <div class="bloco-codigo passo">
-        <span class="nome-arquivo">index.html</span>
-        <pre class="codigo-telao" data-copiar><code>&lt;!-- BLOCO 1: Personalize o título e o subtítulo ambiental da sua comunidade --&gt;
-&lt;span class="selo-ambiental"&gt;SNCT 2026 · Garopaba Sustentavel&lt;/span&gt;
-&lt;h1&gt;Onde Descartar em Garopaba?&lt;/h1&gt;</code></pre>
-      </div>
-      <div class="bloco-codigo passo">
-        <span class="nome-arquivo">css/estilo.css</span>
-        <pre class="codigo-telao" data-copiar><code>:root {
-  --verde-principal: #15803d;
-  --fundo-pagina: #f0fdf4;
-  --fundo-cartao: #ffffff;
-  --texto-escuro: #1e293b;
-}</code></pre>
-      </div>
-    </div>
-  </div>
-  <div class="cartao vitoria passo"><span class="rotulo">🏁 Checkpoint de vitória</span>Salve, aperte <kbd>F5</kbd> no navegador e veja <strong>o seu título e a sua cor</strong>.</div>
-</section>
-
-<!-- ============ TELA 4 · BLOCO 2A (35–55 min) ============ -->
-<section class="slide" data-bloco="2" data-min="20" data-titulo="Bloco 2A · Novo ecoponto" aria-label="Tela 4 de 8: Bloco 2A, novo ecoponto">
-  <div class="faixa">
-    <span class="selo-bloco">TELA 4 DE 8 · BLOCO 2A</span>
-    <span class="chip">35–55 min</span>
-    <span class="chip suave">Micro-Roteiro · Página 2</span>
-  </div>
-  <h2 class="display-6 fw-bold slide-resumo">Cadastre um <span class="destaque">novo ecoponto</span> no array</h2>
-  <p class="lead-telao mb-2">Arquivo <code class="arq">js/app.js</code> · lista <code class="arq">LOCAIS_COLETA</code> · <strong>no final da lista</strong>, antes do <code class="arq">];</code></p>
-  <div class="row g-4">
-    <div class="col-lg-7">
-      <div class="bloco-codigo passo">
-        <span class="nome-arquivo">js/app.js</span>
-        <pre class="codigo-telao" data-copiar><code>  },   // &lt;- coloque a vírgula aqui
-  {
-    nome: "Meu Ecoponto",
-    bairro: "Meu Bairro",
-    categoria: "Oleo",
-    horario: "Sabados, 09h as 13h",
-    mapaUrl: "https://maps.google.com/?q=Garopaba"
-  }
-];</code></pre>
-      </div>
-    </div>
-    <div class="col-lg-5">
-      <div class="cartao alerta passo"><span class="rotulo">⚠️ Erro nº 1 dos iniciantes</span>Esqueceu a <strong>vírgula</strong> depois do <code class="arq">}</code> anterior? A lista inteira para de funcionar.</div>
-      <div class="cartao passo mt-3"><span class="rotulo">🏷️ A categoria precisa ser igual a um botão</span>
-        <div class="etiquetas"><span>Reciclaveis</span><span>Vidro</span><span>Eletronicos</span><span>Oleo</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="cartao vitoria passo"><span class="rotulo">🏁 Checkpoint de vitória</span>Salve, aperte <kbd>F5</kbd> e o <strong>seu ecoponto</strong> aparece em um novo cartão.</div>
-</section>
-
-<!-- ============ TELA 5 · BLOCO 2B (55–70 min) ============ -->
-<section class="slide" data-bloco="2" data-min="15" data-titulo="Bloco 2B · Filtros e mapa" aria-label="Tela 5 de 8: Bloco 2B, filtros e Google Maps">
-  <div class="faixa">
-    <span class="selo-bloco">TELA 5 DE 8 · BLOCO 2B</span>
-    <span class="chip">55–70 min</span>
-    <span class="chip suave">Micro-Roteiro · Página 2</span>
-  </div>
-  <h2 class="display-6 fw-bold slide-resumo">Teste os <span class="destaque">filtros</span> e o link do <span class="destaque">Google Maps</span></h2>
-  <div class="row g-4">
-    <div class="col-lg-6">
-      <div class="bloco-codigo passo">
-        <span class="nome-arquivo">index.html · cada botão</span>
-        <pre class="codigo-telao pequeno" data-copiar><code>&lt;button class="btn-filtro" onclick="filtrarEcopontos('Vidro')"&gt;Vidro&lt;/button&gt;</code></pre>
-      </div>
-      <div class="bloco-codigo passo">
-        <span class="nome-arquivo">js/app.js · o filtro</span>
-        <pre class="codigo-telao pequeno" data-copiar><code>const filtrados = categoriaEscolhida === "Todos"
-  ? LOCAIS_COLETA
-  : LOCAIS_COLETA.filter(item =&gt; item.categoria === categoriaEscolhida);</code></pre>
-      </div>
-      <p class="dica passo">💡 <code class="arq">.filter()</code> guarda <strong>só</strong> os locais cuja categoria é igual ao botão clicado.</p>
-    </div>
-    <div class="col-lg-6">
-      <div class="simulador passo" id="simulador" aria-label="Simulação do filtro">
-        <span class="rotulo">🧪 Experimente aqui (simulação)</span>
-        <div class="barra-filtros" id="sim-botoes"></div>
-        <div class="grade-sim" id="sim-grade" aria-live="polite"></div>
-      </div>
-    </div>
-  </div>
-  <ol class="passos horizontal passo">
-    <li>Clique em <strong>cada botão</strong></li>
-    <li>Veja <strong>só aquele tipo</strong></li>
-    <li>Abra o link do <strong>Google Maps</strong></li>
-  </ol>
-  <div class="cartao vitoria passo"><span class="rotulo">🏁 Checkpoint de vitória</span>Todos os filtros respondem e o mapa abre no local certo.</div>
-</section>
-
-<!-- ============ TELA 6 · BLOCO 3 (70–95 min) ============ -->
-<section class="slide" data-bloco="3" data-min="25" data-titulo="Bloco 3 · GitHub Pages" aria-label="Tela 6 de 8: Bloco 3, GitHub e GitHub Pages">
-  <div class="faixa">
-    <span class="selo-bloco">TELA 6 DE 8 · BLOCO 3</span>
-    <span class="chip">70–95 min</span>
-    <span class="chip suave">Micro-Roteiro · Página 3</span>
-  </div>
-  <h2 class="display-6 fw-bold slide-resumo">Suba no <span class="destaque">GitHub</span> e ative o <span class="destaque">Pages</span></h2>
-  <div class="row g-4">
-    <div class="col-lg-8">
-      <ol class="passos compacto">
-        <li class="passo"><strong>github.com</strong> → <strong>New repository</strong> → nome <code class="arq">painel-verde</code> · <strong>Public</strong></li>
-        <li class="passo"><strong>uploading an existing file</strong> → arraste <code class="arq">index.html</code>, <code class="arq">css/</code> e <code class="arq">js/</code> → <strong>Commit changes</strong></li>
-        <li class="passo"><strong>Settings → Pages</strong> → Branch <code class="arq">main</code> / <code class="arq">/(root)</code> → <strong>Save</strong></li>
-        <li class="passo">Aguarde ~1 min e abra <code class="arq">https://SEU-USUARIO.github.io/painel-verde/</code></li>
-      </ol>
-    </div>
-    <div class="col-lg-4">
-      <div class="cartao alerta passo"><span class="rotulo">⚠️ Se aparecer erro 404</span><code class="arq">index.html</code> precisa estar na <strong>raiz</strong> do repositório, não dentro de uma pasta.</div>
-    </div>
-  </div>
-  <div class="cartao vitoria passo"><span class="rotulo">🏁 Checkpoint de vitória</span>Seu painel abre no endereço <strong>.github.io</strong>, não pelo arquivo do computador.</div>
-</section>
-
-<!-- ============ TELA 7 · BLOCO 4 (95–110 min) ============ -->
-<section class="slide" data-bloco="4" data-min="15" data-titulo="Bloco 4 · QR Code e Mural" aria-label="Tela 7 de 8: Bloco 4, QR Code e Mural">
-  <div class="faixa">
-    <span class="selo-bloco">TELA 7 DE 8 · BLOCO 4</span>
-    <span class="chip">95–110 min</span>
-    <span class="chip suave">Micro-Roteiro · Página 4</span>
-  </div>
-  <h2 class="display-6 fw-bold slide-resumo">Gere o <span class="destaque">QR Code</span> do seu Painel e poste no Mural</h2>
-  <div class="row g-4 align-items-center">
-    <div class="col-lg-7">
-      <ol class="passos compacto">
-        <li class="passo">Cole a <strong>URL .github.io</strong> do seu painel no gerador ao lado</li>
-        <li class="passo">Clique em <strong>Baixar PNG</strong></li>
-        <li class="passo">No Moodle, abra o <strong>Mural do Curso 2</strong> e poste <strong>QR + link</strong></li>
-        <li class="passo">Teste no <strong>celular de um colega</strong> 📱</li>
-      </ol>
-    </div>
-    <div class="col-lg-5">
-      <div class="gerador passo">
-        <label for="urlQr" class="rotulo">🔗 Gerador de QR Code</label>
-        <input id="urlQr" type="url" inputmode="url" autocomplete="off" spellcheck="false"
-               value="https://SEU-USUARIO.github.io/painel-verde/" aria-describedby="dica-qr" />
-        <div class="qr-caixa pequeno" id="qr-gerador"></div>
-        <a id="baixar-qr" class="btn btn-success btn-lg" download="qr-painel-verde.png" href="#">⬇ Baixar PNG</a>
-        <p id="dica-qr" class="dica mb-0">Funciona offline depois de carregado. Nada é enviado a servidores.</p>
-      </div>
-    </div>
-  </div>
-  <div class="cartao vitoria passo"><span class="rotulo">🏁 Checkpoint de vitória</span>O Painel Verde abre no <strong>celular de outra pessoa</strong> pelo QR Code.</div>
-</section>
-
-<!-- ============ TELA 8 · ENCERRAMENTO (110–120 min) ============ -->
-<section class="slide" data-bloco="0" data-min="10" data-titulo="Encerramento e pesquisa" aria-label="Tela 8 de 8: Encerramento e pesquisa de satisfação">
-  <div class="faixa">
-    <span class="selo-bloco">TELA 8 DE 8 · ENCERRAMENTO</span>
-    <span class="chip">110–120 min</span>
-    <span class="chip suave">Micro-Roteiro · Página 4</span>
-  </div>
-  <div class="row align-items-center g-5">
-    <div class="col-lg-7">
-      <h2 class="display-4 fw-bold slide-resumo">Missão cumprida! <span class="destaque">Conte como foi.</span></h2>
-      <p class="lead-telao">Responda a <strong>pesquisa de satisfação</strong> (2 minutos). Ela também está na seção <strong>Bloco 4</strong> da sala do Curso 2.</p>
-      <ul class="conquistas passo">
-        <li>✅ Personalizou o Painel Verde</li>
-        <li>✅ Cadastrou um ecoponto de Garopaba</li>
-        <li>✅ Publicou na internet e gerou o QR Code</li>
-      </ul>
-      <div class="cartao passo">🌱 Você publicou algo útil para <strong>Garopaba</strong>. Compartilhe o link com a sua comunidade!</div>
-    </div>
-    <div class="col-lg-5 text-center">
-      <div class="moldura-qr passo">
-        <div class="qr-caixa" id="qr-pesquisa"></div>
-        <p class="legenda">📱 QR da pesquisa de satisfação</p>
-        <div class="aviso-config" id="aviso-pesquisa" hidden>
-          ⚠️ Falta o link da pesquisa do Curso 2.<br />Defina <code>CONFIG.pesquisa</code> no <code>script.js</code> ou abra com <code>?pesquisa=LINK</code>.
-        </div>
-      </div>
-      <img class="gif-ifsc gif-medio passo" alt="" aria-hidden="true" loading="lazy"
-           src="https://media.giphy.com/media/3BPJQ2UfYGFUzJ3Q1z/giphy.gif" onerror="this.remove()" />
-    </div>
-  </div>
-</section>
-
-</main>
+<!-- As 8 telas são montadas pelo DOM em js/navegacao.js, com o conteúdo de js/telas.js -->
+<main id="palco"></main>
 
 <!-- Visão geral (tecla G) -->
 <div id="visao-geral" role="dialog" aria-modal="true" aria-label="Visão geral das 8 telas" hidden>
@@ -296,22 +24,29 @@
   <div class="vg-grade" id="vg-grade"></div>
 </div>
 
+<!-- Notas do instrutor (tecla N) -->
+<aside id="notas" hidden aria-label="Notas do instrutor"></aside>
+
 <canvas id="confete" aria-hidden="true"></canvas>
 
 <footer class="barra-rodape">
   <span id="indicadorTela" class="fw-bold" aria-live="polite">Tela 1 / 8</span>
-  <div class="pontos" id="pontos" aria-label="Progresso das telas"></div>
+  <div class="linha-tempo" id="linha-tempo" role="group" aria-label="Linha do tempo da oficina (120 min)"></div>
   <button type="button" id="cronometro" title="Clique para iniciar ou pausar (tecla P)">▶ 10:00</button>
-  <span class="atalhos">← → navegar · G visão geral · P cronômetro · R reiniciar · S passo a passo · F tela cheia</span>
   <div class="d-flex gap-2">
-    <button type="button" class="btn btn-outline-light btn-lg" onclick="anterior()" aria-label="Tela anterior">← Anterior</button>
-    <button type="button" class="btn btn-success btn-lg" id="btnProximo" onclick="proximo()">Próximo →</button>
+    <button type="button" class="btn btn-outline-light btn-lg" id="btnAnterior" aria-label="Tela anterior">← Anterior</button>
+    <button type="button" class="btn btn-success btn-lg" id="btnProximo">Próxima tela →</button>
   </div>
 </footer>
-
+<p class="atalhos">← → navegar · 1–8 ir à tela · G visão geral · N notas · P cronômetro · S passo a passo · F tela cheia</p>
 <p class="atribuicao">GIFs: canal @ifsc no <a href="https://giphy.com/ifsc" target="_blank" rel="noopener">GIPHY</a></p>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="script.js"></script>
+<script src="js/dom.js"></script>
+<script src="js/config.js"></script>
+<script src="js/componentes.js"></script>
+<script src="js/telas.js"></script>
+<script src="js/navegacao.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
