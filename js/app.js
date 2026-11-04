@@ -8,6 +8,7 @@ montarVisaoGeral();
 document.getElementById("btnAnterior").addEventListener("click", anterior);
 document.getElementById("btnProximo").addEventListener("click", proximo);
 document.getElementById("cronometro").addEventListener("click", alternarCronometro);
+document.getElementById("btnAjuda").addEventListener("click", alternarAjuda);
 
 definirPassoAPasso(!MODO_ALUNO);
 const inicio = parseInt(location.hash.slice(1), 10);

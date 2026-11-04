@@ -11,8 +11,8 @@ function montarTelas() {
   const palco = document.getElementById("palco");
   TELAS.forEach((t, i) => {
     const corpo = [].concat(t.render());
-    const s = h("section", { class: "slide", dataset: { bloco: t.bloco, min: t.min, titulo: t.titulo }, "aria-label": `Tela ${i + 1} de 8: ${t.titulo}` },
-      faixa(i + 1, t.rotulo, t.intervalo, t.pagina), ...corpo);
+    const s = h("section", { class: "slide " + (t.classe || ""), dataset: { bloco: t.bloco, min: t.min, titulo: t.titulo }, "aria-label": `Tela ${i + 1} de 8: ${t.titulo}` },
+      topo(i + 1, t.rotulo, t.intervalo), ...corpo);
     palco.append(s);
     Nav.slides.push(s);
   });
@@ -20,7 +20,7 @@ function montarTelas() {
     indicador: document.getElementById("indicadorTela"), cronometro: document.getElementById("cronometro"),
     progresso: document.getElementById("progresso"), tempo: document.getElementById("linha-tempo"),
     proximo: document.getElementById("btnProximo"), notas: document.getElementById("notas"),
-    vg: document.getElementById("visao-geral"), vgGrade: document.getElementById("vg-grade")
+    vg: document.getElementById("visao-geral"), vgGrade: document.getElementById("vg-grade"), ajuda: document.getElementById("ajuda")
   };
 }
 
@@ -44,6 +44,7 @@ function irPara(i, mostrarTudo) {
   Nav.indice = Math.max(0, Math.min(Nav.slides.length - 1, i));
   const s = Nav.slides[Nav.indice];
   s.classList.add("ativo"); s.scrollTop = 0;
+  passosDe(s).forEach((p, k) => p.style.setProperty("--i", k));
   passosDe(s).forEach(p => p.classList.toggle("visivel", !emPassoAPasso() || !!mostrarTudo));
   Nav.els.indicador.textContent = `Tela ${Nav.indice + 1} / ${Nav.slides.length}`;
   Nav.els.progresso.style.width = ((Nav.indice + 1) / Nav.slides.length * 100) + "%";
@@ -100,9 +101,11 @@ function fecharVisaoGeral() { Nav.els.vg.hidden = true; }
 /* ---------- notas do instrutor (N) ---------- */
 function atualizarNotas() {
   const t = TELAS[Nav.indice];
-  Nav.els.notas.replaceChildren(h("strong", null, `📝 Notas · Tela ${Nav.indice + 1}`), h("ul", null, t.notas.map(n => h("li", null, n))));
+  Nav.els.notas.replaceChildren(h("strong", null, `📝 Notas do instrutor · Tela ${Nav.indice + 1}`), h("ul", null, t.notas.map(n => h("li", null, n))),
+    h("span", { class: "ref" }, `Micro-Roteiro · Página ${t.pagina}`));
 }
 function alternarNotas() { Nav.els.notas.hidden = !Nav.els.notas.hidden; }
+function alternarAjuda() { Nav.els.ajuda.hidden = !Nav.els.ajuda.hidden; }
 
 /* ---------- teclado ---------- */
 document.addEventListener("keydown", (ev) => {
@@ -122,6 +125,7 @@ document.addEventListener("keydown", (ev) => {
   else if (k === "p" || k === "P") alternarCronometro();
   else if (k === "r" || k === "R") reiniciarCronometro();
   else if (k === "n" || k === "N") alternarNotas();
+  else if (k === "?" || k === "h" || k === "H") alternarAjuda();
   else if (k === "s" || k === "S") definirPassoAPasso(!emPassoAPasso());
   else if (k === "f" || k === "F") { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(() => {}); }
 });

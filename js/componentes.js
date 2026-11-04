@@ -6,8 +6,7 @@
 function criarQr(el, url, tamanho) {
   el.replaceChildren();
   if (!url || typeof QRCode === "undefined") {
-    el.append(h("div", { class: "qr-vazio", style: `width:${tamanho}px;height:${tamanho}px` },
-      "QR indisponível", h("br"), "(sem link ou sem internet)"));
+    el.append(h("div", { class: "qr-placeholder" }, h("b", null, "▦"), "QR aparece aqui", h("small", null, "(falta o link ou a internet)")));
     return false;
   }
   new QRCode(el, { text: url, width: tamanho, height: tamanho, correctLevel: QRCode.CorrectLevel.M });
@@ -23,19 +22,19 @@ function caixaQr(url, tamanho, pequeno) {
 function geradorQr() {
   const entrada = h("input", { id: "urlQr", type: "url", inputmode: "url", autocomplete: "off", spellcheck: "false",
     value: "https://SEU-USUARIO.github.io/painel-verde/", "aria-label": "URL do seu painel" });
-  const caixa = h("div", { class: "qr-caixa pequeno" });
-  const baixar = h("a", { class: "btn btn-success btn-lg", download: "qr-painel-verde.png", href: "#" }, "⬇ Baixar PNG");
+  const caixa = h("div", { class: "qr-caixa" });
+  const baixar = h("a", { class: "btn-baixar", download: "qr-painel-verde.png", href: "#" }, "⬇ Baixar PNG");
   function atualizar() {
     const url = entrada.value.trim();
-    if (!/^https?:\/\//i.test(url)) { criarQr(caixa, "", 190); baixar.removeAttribute("href"); return; }
-    criarQr(caixa, url, 190);
+    if (!/^https?:\/\//i.test(url)) { criarQr(caixa, "", 230); baixar.removeAttribute("href"); return; }
+    criarQr(caixa, url, 230);
     setTimeout(() => { const c = caixa.querySelector("canvas"); if (c) baixar.href = c.toDataURL("image/png"); }, 60);
   }
   entrada.addEventListener("input", atualizar);
   atualizar();
-  return passo(h("div", { class: "gerador" },
-    h("label", { for: "urlQr", class: "rotulo" }, "🔗 Gerador de QR Code"), entrada, caixa, baixar,
-    h("p", { class: "dica mb-0" }, "Funciona sem enviar dados a servidores.")));
+  return passo(h("div", { class: "cartao gerador" },
+    h("label", { for: "urlQr", class: "rotulo" }, "Gerador de QR Code"), entrada, caixa, h("div", null, baixar),
+    h("p", { class: "mini-nota" }, "Roda no seu navegador: nenhum dado é enviado.")));
 }
 
 /* ---------- Tela 5: simulador do filtro (dados iguais ao Starter Kit) ---------- */
@@ -55,21 +54,23 @@ function simuladorFiltro() {
       ? lista.map(l => h("div", { class: "cartao-sim" },
           icone(l.categoria.toLowerCase(), 30),
           h("div", null, h("strong", null, l.nome), h("span", null, `${l.bairro} · ${l.horario}`))))
-      : [h("div", { class: "vazio-sim" }, "Nenhum ecoponto aqui ainda. Cadastre o seu na Tela 4!")]));
+      : [h("div", { class: "vazio-sim" }, imagem("reciclem.gif", "", "Latinha, garrafa e caixa pedindo reciclagem"),
+          "Nenhum ecoponto desta categoria. Cadastre o seu na Tela 4!", h("span", { class: "cred" }, "GIF via GIPHY"))]));
     [...botoes.children].forEach(b => b.classList.toggle("ativo", b.dataset.cat === cat));
   }
   CATEGORIAS.forEach(([cat, rotulo]) =>
     botoes.append(h("button", { type: "button", class: "btn-sim", dataset: { cat }, onclick: () => filtrarSim(cat) }, rotulo)));
   filtrarSim("Todos");
-  return passo(h("div", { class: "simulador" }, h("span", { class: "rotulo" }, "🧪 Experimente aqui (simulação)"), botoes, grade));
+  return passo(h("div", { class: "celular", role: "group", "aria-label": "Simulação do Painel Verde no celular" },
+    h("div", { class: "celular-tela" }, h("h3", null, "Onde Descartar em Garopaba?"), botoes, grade)));
 }
 
-/* ---------- sticker de recompensa (GIF do canal @ifsc) ---------- */
+/* ---------- sticker de recompensa (GIF de festa) ---------- */
 let stickerTimer = null;
 function mostrarSticker() {
   if (REDUZ_MOVIMENTO) return;
   let s = document.getElementById("sticker");
-  if (!s) { s = h("img", { id: "sticker", src: "img/fiz-ifsc.gif", alt: "", "aria-hidden": "true" }); document.body.append(s); }
+  if (!s) { s = h("img", { id: "sticker", src: "img/festa.gif", alt: "", "aria-hidden": "true" }); document.body.append(s); }
   s.classList.remove("some"); void s.offsetWidth; s.classList.add("aparece");
   clearTimeout(stickerTimer);
   stickerTimer = setTimeout(() => { s.classList.remove("aparece"); }, 2200);
@@ -82,7 +83,7 @@ function lancarConfete() {
   const canvas = document.getElementById("confete");
   const ctx = canvas.getContext("2d");
   canvas.width = innerWidth; canvas.height = innerHeight;
-  const cores = ["#22c55e", "#86efac", "#facc15", "#38bdf8", "#c084fc", "#fb923c"];
+  const cores = ["#12a150", "#62e99b", "#f59f00", "#0a6cc4", "#6d3fc8", "#c2255c"];
   const parts = Array.from({ length: 140 }, () => ({
     x: Math.random() * canvas.width, y: -20 - Math.random() * canvas.height * .5,
     r: 5 + Math.random() * 7, vx: -2 + Math.random() * 4, vy: 3 + Math.random() * 5,
